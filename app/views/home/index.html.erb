@@ -1,0 +1,11 @@
+<h1>Accueil</h1>
+<br>
+<%= form_tag (home_search_url) do %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= label_tag 'crypto', "Choisissez la devise qui vous intéresse"  %>
+  	<%= select_tag :crypto, options_for_select(@crypto_names.collect{|x| x})%> 
+	<p> <%= submit_tag 'Afficher le prix actuel', class: "btn btn-primary", method: :post%></p>
+  </div>
+</div>
+<% end %>
